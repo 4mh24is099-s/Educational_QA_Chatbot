@@ -1,8 +1,8 @@
 streamlit
-langchain
-langchain-community
-langchain-huggingface
-faiss-cpu
-pymupdf
-sentence-transformers
 google-genai
+PyMuPDF
+sentence-transformers
+pytesseract
+Pillow
+numpy
+faiss-cpu
