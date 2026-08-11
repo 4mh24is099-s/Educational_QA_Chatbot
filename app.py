@@ -160,6 +160,7 @@ if uploaded_file:
     # ==========================
 
     text = st.session_state.text
+    study_text = text[:30000]
 
     st.markdown("## 📚 Study Tools")
 
@@ -176,7 +177,7 @@ if uploaded_file:
 
             with st.spinner("Generating Summary..."):
 
-                prompt = summary_prompt(text)
+                prompt = summary_prompt(study_text)
 
                 response = client.models.generate_content(
                     model="gemini-3.5-flash",
@@ -198,7 +199,7 @@ if uploaded_file:
 
             with st.spinner("Generating Flashcards..."):
 
-                prompt = flashcard_prompt(text)
+                prompt = flashcard_prompt(study_text)
 
                 response = client.models.generate_content(
                     model="gemini-3.5-flash",
@@ -220,7 +221,7 @@ if uploaded_file:
 
             with st.spinner("Generating MCQs..."):
 
-                prompt = mcq_prompt(text)
+                prompt = mcq_prompt(study_text)
 
                 response = client.models.generate_content(
                     model="gemini-3.5-flash",
